@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import Map from './Map';
+import './styles/App.scss';
 
 const Main = ({
   collapsed,
@@ -12,9 +13,9 @@ const Main = ({
       <div className="btn-toggle" onClick={() => handleToggleSidebar(true)}>
         <FaBars />
       </div>
-        <h1>
+        <div>
            <Map></Map>
-        </h1>
+        </div>
     </main>
   );
 };

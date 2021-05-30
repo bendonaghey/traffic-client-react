@@ -7,7 +7,7 @@ import {
   SidebarHeader,
   SidebarContent,
 } from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaList, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import { FaTachometerAlt, FaGem } from 'react-icons/fa';
 import { AiFillCar } from 'react-icons/ai';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
