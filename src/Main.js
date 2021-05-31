@@ -13,9 +13,9 @@ const Main = ({
       <div className="btn-toggle" onClick={() => handleToggleSidebar(true)}>
         <FaBars />
       </div>
-        <div>
-           <Map></Map>
-        </div>
+      <div className="image-margin">
+        <Map />
+      </div>
     </main>
   );
 };
