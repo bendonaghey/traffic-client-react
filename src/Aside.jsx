@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
   ProSidebar,
   Menu,
@@ -14,6 +14,10 @@ import Button from 'react-bootstrap/Button';
 
 
 const Aside = ({ collapsed, rtl, toggled, handleToggleSidebar, handleCollapsedChange }) => {
+
+  const [locationA, setLocationA] = useState("");
+  const [locationB, setLocationB] = useState("");
+
   return (
     <ProSidebar
       rtl={rtl}
@@ -43,28 +47,31 @@ const Aside = ({ collapsed, rtl, toggled, handleToggleSidebar, handleCollapsedCh
 
       <SidebarContent>
         <Menu iconShape="circle">
-          <MenuItem
-            icon={<FaTachometerAlt />}
-          >
-            dashboard
-          </MenuItem>
-          <MenuItem icon={<FaGem />}>components</MenuItem>
-        </Menu>
-        <Menu iconShape="circle">
           <SubMenu
             title='Search Traffic'
             icon={<AiFillCar />}
-            defaultOpen = {true}
+            defaultOpen={true}
           >
-            <Form style={{paddingRight: "20px" }}>
+            <Form style={{ paddingRight: "20px" }}>
               <Form.Group controlId="locationA">
                 <Form.Label>Location A</Form.Label>
-                <Form.Control type="text" placeholder="Enter a Location" />
+                <Form.Control
+                  value={locationA}
+                  type="text"
+                  placeholder="Enter a Location"
+                  onChange={e => setLocationA(e.target.value)}
+                  defaultValue="Derry"
+                />
               </Form.Group>
 
               <Form.Group controlId="locationB">
                 <Form.Label>Location B</Form.Label>
-                <Form.Control type="text" placeholder="Enter a Location" />
+                <Form.Control
+                  value={locationB}
+                  type="text"
+                  placeholder="Enter a Location"
+                  onChange={e => setLocationB(e.target.value)}
+                />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Submit
@@ -75,6 +82,18 @@ const Aside = ({ collapsed, rtl, toggled, handleToggleSidebar, handleCollapsedCh
           {/* Add More Here */}
 
         </Menu>
+
+
+
+        <Menu iconShape="circle">
+          <MenuItem
+            icon={<FaTachometerAlt />}
+          >
+            dashboard
+          </MenuItem>
+          <MenuItem icon={<FaGem />}>components</MenuItem>
+        </Menu>
+
       </SidebarContent>
     </ProSidebar>
   );
